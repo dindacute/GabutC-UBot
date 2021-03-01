@@ -53,7 +53,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         if HEROKU_APP_NAME is None:
             await event.edit(
                 '`[HEROKU]: Harap Siapkan Variabel` **HEROKU_APP_NAME** `'
-                ' untuk dapat deploy perubahan terbaru dari GabutC-UBot.`'
+                ' untuk dapat deploy perubahan terbaru dari Dinda-CUTEbot.`'
             )
             repo.__del__()
             return
@@ -63,11 +63,11 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 break
         if heroku_app is None:
             await event.edit(
-                f'{txt}\n`Kredensial Heroku tidak valid untuk deploy GabutC-UBot dyno.`'
+                f'{txt}\n`Kredensial Heroku tidak valid untuk deploy Dinda-CUTEbot dyno.`'
             )
             return repo.__del__()
         await event.edit('`[HEROKU]:'
-                         '\nDyno GabutC-UBot Sedang Dalam Proses, Mohon Menunggu 7-8 Menit yak XiXiXi`'
+                         '\nDyno Dinda-CUTEbot Sedang Dalam Proses, Mohon Menunggu 7-8 Menit yak XiXiXi`'
                          )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -91,14 +91,14 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             await asyncio.sleep(5)
             return await event.delete()
         else:
-            await event.edit("`GabutC-UBot Berhasil Di Deploy!\n" "Restarting, Mohon Menunggu Sayang.....`")
+            await event.edit("`Dinda-CUTEbot Berhasil Di Deploy!\n" "Restarting, Mohon Menunggu Sayang.....`")
             await asyncio.sleep(15)
             await event.delete()
 
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID, "#BOT \n"
-                "`GabutC-UBot Berhasil Di Update`")
+                "`Dinda-CUTEbot Berhasil Di Update`")
 
     else:
         await event.edit('`[HEROKU]:'
@@ -115,9 +115,9 @@ async def update(event, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
-    await event.edit('**❋ GabutC-UBot** `Berhasil Di Update!`')
+    await event.edit('**❋ Dinda-CUTEbot** `Berhasil Di Update!`')
     await asyncio.sleep(1)
-    await event.edit('**❋ GabutC-UBot** `Di Restart....`')
+    await event.edit('**❋ Dinda-CUTEbot** `Di Restart....`')
     await asyncio.sleep(1)
     await event.edit('`Mohon Menunggu Beberapa Detik Sayang ツ`')
     await asyncio.sleep(10)
@@ -126,7 +126,7 @@ async def update(event, repo, ups_rem, ac_br):
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID, "#BOT \n"
-            "**GabutC-UBot Telah Di Perbarui ツ**")
+            "**Dinda-CUTEbot Telah Di Perbarui ツ**")
         await asyncio.sleep(100)
         await event.delete()
 
@@ -188,13 +188,13 @@ async def upstream(event):
 
     if changelog == '' and force_update is False:
         await event.edit(
-            f'\n**✣ GabutC-UBot Sudah Versi Terbaru**\n')
+            f'\n**✣ Dinda-CUTEbot Sudah Versi Terbaru**\n')
         await asyncio.sleep(15)
         await event.delete()
         return repo.__del__()
 
     if conf is None and force_update is False:
-        changelog_str = f'**✣ Pembaruan Untuk GabutC-UBot:\n\n✣ Pembaruan:**\n`{changelog}`'
+        changelog_str = f'**✣ Pembaruan Untuk Dinda-CUTEbot:\n\n✣ Pembaruan:**\n`{changelog}`'
         if len(changelog_str) > 4096:
             await event.edit("`Changelog Terlalu Besar, Lihat File Untuk Melihatnya.`")
             file = open("output.txt", "w+")
@@ -208,18 +208,18 @@ async def upstream(event):
             remove("output.txt")
         else:
             await event.edit(changelog_str)
-        return await event.respond('**Perintah Untuk Update GabutC-UBot**\n >`.update now`\n >`.update deploy`\n\n__Untuk Meng Update Fitur Terbaru Dari GabutC-UBot.__')
+        return await event.respond('**Perintah Untuk Update Dinda-CUTEbot**\n >`.update now`\n >`.update deploy`\n\n__Untuk Meng Update Fitur Terbaru Dari Dinda-CUTEbot.__')
 
     if force_update:
         await event.edit(
             '`Sinkronisasi Paksa Ke Kode Userbot Stabil Terbaru, Harap Tunggu .....`')
     else:
-        await event.edit('`✲ Proses Update GabutC-UBot, Loading....1%`')
-        await event.edit('`✲ Proses Update GabutC-UBot, Loading....20%`')
-        await event.edit('`✲ Proses Update GabutC-UBot, Loading....35%`')
-        await event.edit('`✲ Proses Update GabutC-UBot, Loading....77%`')
-        await event.edit('`✲ Proses Update GabutC-UBot, Updating...90%`')
-        await event.edit('`✲ Proses Update GabutC-UBot, Mohon Menunggu Sayang....100%`')
+        await event.edit('`✲ Proses Update Dinda-CUTEbot, Loading....1%`')
+        await event.edit('`✲ Proses Update Dinda-CUTEbot, Loading....20%`')
+        await event.edit('`✲ Proses Update Dinda-CUTEbot, Loading....35%`')
+        await event.edit('`✲ Proses Update Dinda-CUTEbot, Loading....77%`')
+        await event.edit('`✲ Proses Update Dinda-CUTEbot, Updating...90%`')
+        await event.edit('`✲ Proses Update Dinda-CUTEbot, Mohon Menunggu Sayang....100%`')
     if conf == "now":
         await update(event, repo, ups_rem, ac_br)
         await asyncio.sleep(10)
@@ -234,9 +234,9 @@ async def upstream(event):
 CMD_HELP.update({
     'update':
     ".update"
-    "\nUsage: Untuk Melihat Pembaruan Terbaru GabutC-UBot."
+    "\nUsage: Untuk Melihat Pembaruan Terbaru Dinda-CUTEbot."
     "\n\n.update now"
-    "\nUsage: Memperbarui GabutC-UBot."
+    "\nUsage: Memperbarui Dinda-CUTEbot."
     "\n\n.update deploy"
-    "\nUsage: Memperbarui GabutC-UBot Dengan Cara Deploy Ulang."
+    "\nUsage: Memperbarui Dinda-CUTEbot Dengan Cara Deploy Ulang."
 })
