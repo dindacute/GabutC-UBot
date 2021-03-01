@@ -100,7 +100,7 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/dindacute/GabutC-UBot.git")
+    "https://github.com/dindacute/Dinda-CUTEbot.git")
 UPSTREAM_REPO_BRANCH = os.environ.get(
     "UPSTREAM_REPO_BRANCH", "Lord-Userbot")
 
@@ -163,7 +163,7 @@ ZIP_DOWNLOAD_DIRECTORY = os.environ.get("ZIP_DOWNLOAD_DIRECTORY", "./zips")
 BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 
 # Bot Name
-TERM_ALIAS = os.environ.get("TERM_ALIAS", "GabutC-UBot")
+TERM_ALIAS = os.environ.get("TERM_ALIAS", "Dinda-CUTEbot")
 
 # Bot version
 BOT_VER = os.environ.get("BOT_VER", "4.0")
@@ -315,7 +315,7 @@ with bot:
 
 
 async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, "```⚔GabutC-UBot Telah Aktif⚔```")
+    await bot.send_message(BOTLOG_CHATID, "```⚔Dinda-CUTEbot Telah Aktif⚔```")
     return
 
 with bot:
@@ -386,7 +386,7 @@ with bot:
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             if event.message.from_id != uid:
-                await event.reply("GabutC-UBot, Buat Userbot Mu Sendiri [Tekan Disini](https://github.com/Ependelope53/GabutC-UBot.git)")
+                await event.reply("Dinda-CUTEbot, Buat Userbot Mu Sendiri [Tekan Disini](https://github.com/Ependelope53/Dinda-CUTEbot.git)")
             else:
                 await event.reply(f"`Hai Sayang {ALIVE_NAME}\n\nApa Kabarmu?`")
 
@@ -399,8 +399,8 @@ with bot:
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.article(
                     "Harap Gunakan .help Untuk Perintah",
-                    text="{}\n\n**❃ Jumlah Modul Yang Tersedia:** `{}`\n               \n**❃ Daftar Modul GabutC-UBot:** \n".format(
-                        "**❂ GabutC-UBot**",
+                    text="{}\n\n**❃ Jumlah Modul Yang Tersedia:** `{}`\n               \n**❃ Daftar Modul Dinda-CUTEbot:** \n".format(
+                        "**❂ Dinda-CUTEbot**",
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -408,22 +408,22 @@ with bot:
                 )
             elif query.startswith("tb_btn"):
                 result = builder.article(
-                    "Bantuan GabutC-UBot ",
+                    "Bantuan Dinda-CUTEbot ",
                     text="Daftar Modul",
                     buttons=[],
                     link_preview=True)
             else:
                 result = builder.article(
-                    "**GabutC-UBot**",
+                    "**Dinda-CUTEbot**",
                     text="""**Anda Bisa Membuat Gabut Userbot Anda Sendiri Dengan Cara:** [Tekan Disini](t.me/Lorduserbot_Group)""",
                     buttons=[
                         [
                             custom.Button.url(
-                                "Repo GabutC-UBot",
-                                "https://github.com/Ependelope53/GabutC-UBot"),
+                                "Repo Dinda-CUTEbot",
+                                "https://github.com/Ependelope53/Dinda-CUTEbot"),
                             custom.Button.url(
                                 "Pemilik Repo",
-                                "t.me/AkuUserBot")],
+                                "t.me/DevUnyu_DINDA")],
                     ],
                     link_preview=False,
                 )
@@ -492,7 +492,7 @@ with bot:
                     )
                 )
             else:
-                reply_pop_up_alert = f"Harap Deploy GabutC-UBot Anda Sendiri, Jangan Menggunakan Milik Bos {ALIVE_NAME} ツ"
+                reply_pop_up_alert = f"Harap Deploy Dinda-CUTEbot Anda Sendiri, Jangan Menggunakan Milik Bos {ALIVE_NAME} ツ"
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
