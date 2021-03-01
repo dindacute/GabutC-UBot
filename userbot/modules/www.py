@@ -157,7 +157,7 @@ async def pingme(pong):
     await pong.edit(f"**❅ 🜙PING 🜝** "
                     f"\n  ➥ `%sms` \n"
                     f"🜙 **Uptime:** "
-                    f"`{uptime}` \n"
+                    f"`{uptime}` \n" % (duration))
                     f"**❅ 🜙OWNER 🜝** "
                     f"\n  ➥ `{ALIVE_NAME}` \n" % (duration))
 
